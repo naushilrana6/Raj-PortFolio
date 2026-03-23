@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raj Sharma | Portfolio</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800;900&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        body {
+            background-color: #000;
+            color: #fff;
+            overflow-x: hidden;
+        }
+
+        /* --- Navbar --- */
+        header {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            padding: 30px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 100;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 900;
+            color: #fff;
+            text-decoration: none;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            text-transform: uppercase;
+        }
+
+        /* --- Hero Section --- */
+        .hero {
+            position: relative;
+            height: 100vh;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            padding: 0 5%;
+            overflow: hidden;
+        }
+
+        /* New Direct Video Source Fix */
+        .video-bg {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            z-index: -2;
+            transform: translate(-50%, -50%);
+            object-fit: cover;
+            background-color: #000;
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to right, rgba(0,0,0,0.8), rgba(0,0,0,0.2));
+            z-index: -1;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            z-index: 1;
+        }
+
+        .hero-content h1 {
+            font-size: 5rem;
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            color: #ddd;
+            font-weight: 400;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 15px 40px;
+            background-color: #fff;
+            color: #000;
+            text-decoration: none;
+            font-weight: 800;
+            text-transform: uppercase;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #ffcc00;
+            transform: scale(1.05);
+        }
+
+        /* --- Marquee --- */
+        .marquee-container {
+            background: #111;
+            padding: 20px 0;
+            overflow: hidden;
+            white-space: nowrap;
+            border-top: 1px solid #333;
+            border-bottom: 1px solid #333;
+        }
+
+        .marquee-content {
+            display: inline-block;
+            animation: marquee 25s linear infinite;
+        }
+
+        .marquee-item {
+            display: inline-block;
+            font-size: 24px;
+            font-weight: 800;
+            color: #555;
+            margin: 0 40px;
+            text-transform: uppercase;
+        }
+
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        /* --- Grid Section --- */
+        .services {
+            padding: 100px 5%;
+            background-color: #050505;
+            text-align: center;
+        }
+
+        .services h2 {
+            font-size: 3rem;
+            font-weight: 900;
+            margin-bottom: 60px;
+            text-transform: uppercase;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .service-card {
+            background: #111;
+            height: 350px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            color: #fff;
+            font-size: 2rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid #222;
+            transition: all 0.4s ease;
+        }
+
+        .service-card:hover { border-color: #ffcc00; }
+        .service-card:hover span { color: #ffcc00; transform: scale(1.1); }
+
+        /* --- Footer --- */
+        footer {
+            background-color: #050505;
+            padding: 60px 5% 30px;
+            text-align: center;
+            border-top: 1px solid #222;
+        }
+
+        .contact-info h3 { color: #ffcc00; font-size: 1.8rem; margin-bottom: 15px; text-transform: uppercase; }
+        .contact-info p { color: #aaa; margin-bottom: 8px; }
+        .contact-info a { color: #fff; text-decoration: none; }
+        .copyright { color: #444; margin-top: 40px; font-size: 0.9rem; text-transform: uppercase; }
+
+        @media (max-width: 768px) {
+            .hero-content h1 { font-size: 3rem; }
+            .nav-links { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="#" class="logo">Raj Sharma</a>
+        <div class="nav-links">
+            <a href="#">Home</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </header>
+
+    <section class="hero">
+        <video class="video-bg" autoplay loop muted playsinline>
+            <source src="https://assets.mixkit.co/videos/preview/mixkit-abstract-technology-dark-loop-background-28495-large.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="overlay"></div>
+
+        <div class="hero-content">
+            <h1>Create. Edit.<br>Animate.</h1>
+            <p>Portfolio of Raj Sharma | Premium Graphic Design, AI Specialist & Motion Artist.</p>
+            <a href="#projects" class="btn">View Projects</a>
+        </div>
+    </section>
+
+    <div class="marquee-container">
+        <div class="marquee-content">
+            <span class="marquee-item">Photoshop</span> <span class="marquee-item">•</span>
+            <span class="marquee-item">After Effects</span> <span class="marquee-item">•</span>
+            <span class="marquee-item">Premiere Pro</span> <span class="marquee-item">•</span>
+            <span class="marquee-item">Gemini</span> <span class="marquee-item">•</span>
+            <span class="marquee-item">Midjourney</span> <span class="marquee-item">•</span>
+            <span class="marquee-item">Kling AI</span> <span class="marquee-item">•</span>
+            <span class="marquee-item">ChatGPT</span> <span class="marquee-item">•</span>
+            <span class="marquee-item">Freepik</span> <span class="marquee-item">•</span>
+            <span class="marquee-item">Photoshop</span> <span class="marquee-item">•</span>
+            <span class="marquee-item">After Effects</span> <span class="marquee-item">•</span>
+            <span class="marquee-item">Premiere Pro</span>
+        </div>
+    </div>
+
+    <section id="projects" class="services">
+        <h2>My Expertise</h2>
+        <div class="grid-container">
+            <a href="graphic-projects.html" target="_blank" class="service-card">
+                <span>Graphic Design</span>
+            </a>
+            <a href="ai-portfolio.html" target="_blank" class="service-card">
+                <span>AI Content</span>
+            </a>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <div class="contact-info">
+            <h3>Let's Work Together</h3>
+            <p>Email: <a href="mailto:rajsharma@example.com">rajsharma@example.com</a></p>
+            <p>Location: Surat, Gujarat, India</p>
+        </div>
+        <div class="copyright">
+            Copyright &copy; 2026 Raj Sharma. All Rights Reserved.
+        </div>
+    </footer>
+
+</body>
+</html>
